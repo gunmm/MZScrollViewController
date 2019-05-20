@@ -1,60 +1,53 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--My Scroll View Controller-->
+        <!--Scroll View Controller-->
         <scene sceneID="mmJ-bj-qWV">
             <objects>
-                <viewController storyboardIdentifier="MyScrollViewController" id="thF-se-rik" customClass="MyScrollViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MZScrollViewController" id="thF-se-rik" customClass="MZScrollViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="OIn-nE-jec">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jju-bE-bwg">
-                                <rect key="frame" x="0.0" y="627" width="375" height="40"/>
-                                <color key="backgroundColor" red="0.0" green="0.4941176471" blue="0.7725490196" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="40" id="L1g-4I-5nQ"/>
-                                </constraints>
-                            </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="4J5-Wg-7pQ">
-                                <rect key="frame" x="0.0" y="20" width="375" height="607"/>
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <view key="tableFooterView" contentMode="scaleToFill" id="8Ah-rM-itv">
                                     <rect key="frame" x="0.0" y="72" width="375" height="200"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <subviews>
-                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ekq-XV-w6y">
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ekq-XV-w6y" customClass="HMSegmentedControl">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="40"/>
                                             <color key="backgroundColor" red="1" green="0.51764705879999995" blue="0.23529411759999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <constraints>
-                                                <constraint firstAttribute="height" constant="40" id="Ob4-cW-CE9"/>
+                                                <constraint firstAttribute="height" constant="40" id="af3-ND-pu1"/>
                                             </constraints>
                                         </view>
                                         <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="opL-hK-ez8">
                                             <rect key="frame" x="0.0" y="40" width="375" height="160"/>
                                             <connections>
-                                                <segue destination="dVi-UT-IoP" kind="embed" identifier="MyPageViewController" id="LV7-vL-urR"/>
+                                                <segue destination="e4R-rt-V1b" kind="embed" identifier="MZPageViewController" id="HQY-Js-Hyz"/>
                                             </connections>
                                         </containerView>
                                     </subviews>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <constraints>
-                                        <constraint firstItem="ekq-XV-w6y" firstAttribute="leading" secondItem="8Ah-rM-itv" secondAttribute="leading" id="8j3-cJ-KcO"/>
-                                        <constraint firstItem="opL-hK-ez8" firstAttribute="leading" secondItem="8Ah-rM-itv" secondAttribute="leading" id="LJn-am-yVK"/>
-                                        <constraint firstAttribute="trailing" secondItem="ekq-XV-w6y" secondAttribute="trailing" id="Mcc-u9-1x1"/>
-                                        <constraint firstItem="opL-hK-ez8" firstAttribute="top" secondItem="ekq-XV-w6y" secondAttribute="bottom" id="gN6-KX-Jpg"/>
-                                        <constraint firstItem="ekq-XV-w6y" firstAttribute="top" secondItem="8Ah-rM-itv" secondAttribute="top" id="gXa-AA-MXC"/>
-                                        <constraint firstAttribute="bottom" secondItem="opL-hK-ez8" secondAttribute="bottom" id="lmt-Lb-lav"/>
-                                        <constraint firstAttribute="trailing" secondItem="opL-hK-ez8" secondAttribute="trailing" id="tUF-3X-6tk"/>
+                                        <constraint firstAttribute="trailing" secondItem="opL-hK-ez8" secondAttribute="trailing" id="0sp-Ew-mp3"/>
+                                        <constraint firstAttribute="bottom" secondItem="opL-hK-ez8" secondAttribute="bottom" id="7Tr-3E-00U"/>
+                                        <constraint firstItem="opL-hK-ez8" firstAttribute="leading" secondItem="8Ah-rM-itv" secondAttribute="leading" id="LRZ-p5-VaA"/>
+                                        <constraint firstAttribute="trailing" secondItem="ekq-XV-w6y" secondAttribute="trailing" id="RRa-kS-AEY"/>
+                                        <constraint firstItem="ekq-XV-w6y" firstAttribute="top" secondItem="8Ah-rM-itv" secondAttribute="top" id="Ymu-3d-zS0"/>
+                                        <constraint firstItem="opL-hK-ez8" firstAttribute="top" secondItem="ekq-XV-w6y" secondAttribute="bottom" id="dhr-uP-yPV"/>
+                                        <constraint firstItem="ekq-XV-w6y" firstAttribute="leading" secondItem="8Ah-rM-itv" secondAttribute="leading" id="srO-nV-hT6"/>
                                     </constraints>
                                 </view>
                                 <prototypes>
@@ -68,6 +61,13 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jju-bE-bwg">
+                                <rect key="frame" x="0.0" y="667" width="375" height="0.0"/>
+                                <color key="backgroundColor" red="0.0" green="0.4941176471" blue="0.7725490196" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" id="L1g-4I-5nQ"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -82,20 +82,23 @@
                         <viewLayoutGuide key="safeArea" id="SoV-fG-sGh"/>
                     </view>
                     <connections>
+                        <outlet property="privateFooterView" destination="jju-bE-bwg" id="olC-i1-ucu"/>
+                        <outlet property="privateFooterViewHeight" destination="L1g-4I-5nQ" id="V6b-tA-JSz"/>
+                        <outlet property="segmentedControl" destination="ekq-XV-w6y" id="eXY-te-jY3"/>
                         <outlet property="tableView" destination="4J5-Wg-7pQ" id="i2Y-GG-JfC"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OoQ-z1-bPo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="290" y="-27"/>
+            <point key="canvasLocation" x="31" y="-28"/>
         </scene>
-        <!--My Page View Controller-->
-        <scene sceneID="cTD-IM-krV">
+        <!--Page View Controller-->
+        <scene sceneID="ZI8-Qv-VmE">
             <objects>
-                <viewController id="dVi-UT-IoP" customClass="MyPageViewController" sceneMemberID="viewController"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="TrB-34-ozN" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="e4R-rt-V1b" customClass="MZPageViewController" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ARf-Ld-mFZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="860" y="-19"/>
+            <point key="canvasLocation" x="858" y="-50"/>
         </scene>
     </scenes>
 </document>

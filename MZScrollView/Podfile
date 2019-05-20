@@ -1,0 +1,7 @@
+platform :ios, '10.1'
+use_frameworks!
+target 'MZScrollView' do
+
+pod 'HMSegmentedControl'
+
+end

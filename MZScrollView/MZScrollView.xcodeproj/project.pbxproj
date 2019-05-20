@@ -3,10 +3,11 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		63B4BE24BEEC6EF1775F9AEC /* Pods_MZScrollView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7294951B2BAE90C7F4AFAA86 /* Pods_MZScrollView.framework */; };
 		CD9A9A8722924B5100354989 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CD9A9A8622924B5100354989 /* AppDelegate.m */; };
 		CD9A9A8A22924B5100354989 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CD9A9A8922924B5100354989 /* ViewController.m */; };
 		CD9A9A8D22924B5100354989 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CD9A9A8B22924B5100354989 /* Main.storyboard */; };
@@ -15,10 +16,10 @@
 		CD9A9A9522924B5200354989 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CD9A9A9422924B5200354989 /* main.m */; };
 		CD9A9A9F22924B5200354989 /* MZScrollViewTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CD9A9A9E22924B5200354989 /* MZScrollViewTests.m */; };
 		CD9A9AAA22924B5200354989 /* MZScrollViewUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = CD9A9AA922924B5200354989 /* MZScrollViewUITests.m */; };
-		CD9A9AC222924BBA00354989 /* MyScrollViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CD9A9AB922924BBA00354989 /* MyScrollViewController.m */; };
-		CD9A9AC422924BBA00354989 /* MyScrollStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CD9A9ABB22924BBA00354989 /* MyScrollStoryboard.storyboard */; };
-		CD9A9AC522924BBA00354989 /* UIScrollView+MorePan.m in Sources */ = {isa = PBXBuildFile; fileRef = CD9A9ABE22924BBA00354989 /* UIScrollView+MorePan.m */; };
-		CD9A9AC722924BBA00354989 /* MyPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CD9A9AC022924BBA00354989 /* MyPageViewController.m */; };
+		CD9A9AC222924BBA00354989 /* MZScrollViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CD9A9AB922924BBA00354989 /* MZScrollViewController.m */; };
+		CD9A9AC422924BBA00354989 /* MZScrollViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CD9A9ABB22924BBA00354989 /* MZScrollViewController.storyboard */; };
+		CD9A9AC522924BBA00354989 /* UIScrollView+MZMorePan.m in Sources */ = {isa = PBXBuildFile; fileRef = CD9A9ABE22924BBA00354989 /* UIScrollView+MZMorePan.m */; };
+		CD9A9AC722924BBA00354989 /* MZPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CD9A9AC022924BBA00354989 /* MZPageViewController.m */; };
 		CD9A9ACB22924C4C00354989 /* ListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CD9A9AC922924C4C00354989 /* ListViewController.m */; };
 		CD9A9ACC22924C4C00354989 /* ListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD9A9ACA22924C4C00354989 /* ListViewController.xib */; };
 /* End PBXBuildFile section */
@@ -41,6 +42,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		075D9BF1040D1647132C3426 /* Pods-MZScrollView.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MZScrollView.debug.xcconfig"; path = "Target Support Files/Pods-MZScrollView/Pods-MZScrollView.debug.xcconfig"; sourceTree = "<group>"; };
+		36B1EA9D1572FB0A33DE90F1 /* Pods-MZScrollView.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MZScrollView.release.xcconfig"; path = "Target Support Files/Pods-MZScrollView/Pods-MZScrollView.release.xcconfig"; sourceTree = "<group>"; };
+		7294951B2BAE90C7F4AFAA86 /* Pods_MZScrollView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MZScrollView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CD9A9A8222924B5100354989 /* MZScrollView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MZScrollView.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CD9A9A8522924B5100354989 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		CD9A9A8622924B5100354989 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -57,13 +61,13 @@
 		CD9A9AA522924B5200354989 /* MZScrollViewUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MZScrollViewUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CD9A9AA922924B5200354989 /* MZScrollViewUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MZScrollViewUITests.m; sourceTree = "<group>"; };
 		CD9A9AAB22924B5200354989 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		CD9A9AB822924BBA00354989 /* MyScrollViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyScrollViewController.h; sourceTree = "<group>"; };
-		CD9A9AB922924BBA00354989 /* MyScrollViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyScrollViewController.m; sourceTree = "<group>"; };
-		CD9A9ABB22924BBA00354989 /* MyScrollStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MyScrollStoryboard.storyboard; sourceTree = "<group>"; };
-		CD9A9ABC22924BBA00354989 /* UIScrollView+MorePan.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+MorePan.h"; sourceTree = "<group>"; };
-		CD9A9ABD22924BBA00354989 /* MyPageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyPageViewController.h; sourceTree = "<group>"; };
-		CD9A9ABE22924BBA00354989 /* UIScrollView+MorePan.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+MorePan.m"; sourceTree = "<group>"; };
-		CD9A9AC022924BBA00354989 /* MyPageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyPageViewController.m; sourceTree = "<group>"; };
+		CD9A9AB822924BBA00354989 /* MZScrollViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MZScrollViewController.h; sourceTree = "<group>"; };
+		CD9A9AB922924BBA00354989 /* MZScrollViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MZScrollViewController.m; sourceTree = "<group>"; };
+		CD9A9ABB22924BBA00354989 /* MZScrollViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MZScrollViewController.storyboard; sourceTree = "<group>"; };
+		CD9A9ABC22924BBA00354989 /* UIScrollView+MZMorePan.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+MZMorePan.h"; sourceTree = "<group>"; };
+		CD9A9ABD22924BBA00354989 /* MZPageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MZPageViewController.h; sourceTree = "<group>"; };
+		CD9A9ABE22924BBA00354989 /* UIScrollView+MZMorePan.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+MZMorePan.m"; sourceTree = "<group>"; };
+		CD9A9AC022924BBA00354989 /* MZPageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MZPageViewController.m; sourceTree = "<group>"; };
 		CD9A9AC822924C4B00354989 /* ListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ListViewController.h; sourceTree = "<group>"; };
 		CD9A9AC922924C4C00354989 /* ListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ListViewController.m; sourceTree = "<group>"; };
 		CD9A9ACA22924C4C00354989 /* ListViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ListViewController.xib; sourceTree = "<group>"; };
@@ -74,6 +78,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				63B4BE24BEEC6EF1775F9AEC /* Pods_MZScrollView.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -94,6 +99,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0B8EC51CD56ADABACAE0F4F2 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				7294951B2BAE90C7F4AFAA86 /* Pods_MZScrollView.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		72F3B945421623802BC0C4A8 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				075D9BF1040D1647132C3426 /* Pods-MZScrollView.debug.xcconfig */,
+				36B1EA9D1572FB0A33DE90F1 /* Pods-MZScrollView.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		CD9A9A7922924B5100354989 = {
 			isa = PBXGroup;
 			children = (
@@ -101,6 +123,8 @@
 				CD9A9A9D22924B5200354989 /* MZScrollViewTests */,
 				CD9A9AA822924B5200354989 /* MZScrollViewUITests */,
 				CD9A9A8322924B5100354989 /* Products */,
+				72F3B945421623802BC0C4A8 /* Pods */,
+				0B8EC51CD56ADABACAE0F4F2 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -155,13 +179,13 @@
 		CD9A9AB722924B9600354989 /* MZScrollViewController */ = {
 			isa = PBXGroup;
 			children = (
-				CD9A9ABD22924BBA00354989 /* MyPageViewController.h */,
-				CD9A9AC022924BBA00354989 /* MyPageViewController.m */,
-				CD9A9ABB22924BBA00354989 /* MyScrollStoryboard.storyboard */,
-				CD9A9AB822924BBA00354989 /* MyScrollViewController.h */,
-				CD9A9AB922924BBA00354989 /* MyScrollViewController.m */,
-				CD9A9ABC22924BBA00354989 /* UIScrollView+MorePan.h */,
-				CD9A9ABE22924BBA00354989 /* UIScrollView+MorePan.m */,
+				CD9A9ABD22924BBA00354989 /* MZPageViewController.h */,
+				CD9A9AC022924BBA00354989 /* MZPageViewController.m */,
+				CD9A9AB822924BBA00354989 /* MZScrollViewController.h */,
+				CD9A9AB922924BBA00354989 /* MZScrollViewController.m */,
+				CD9A9ABB22924BBA00354989 /* MZScrollViewController.storyboard */,
+				CD9A9ABC22924BBA00354989 /* UIScrollView+MZMorePan.h */,
+				CD9A9ABE22924BBA00354989 /* UIScrollView+MZMorePan.m */,
 			);
 			path = MZScrollViewController;
 			sourceTree = "<group>";
@@ -173,9 +197,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = CD9A9AAE22924B5200354989 /* Build configuration list for PBXNativeTarget "MZScrollView" */;
 			buildPhases = (
+				0C9DEB8735775B85F3CC2CA4 /* [CP] Check Pods Manifest.lock */,
 				CD9A9A7E22924B5100354989 /* Sources */,
 				CD9A9A7F22924B5100354989 /* Frameworks */,
 				CD9A9A8022924B5100354989 /* Resources */,
+				6C5CCC31F19848283CF5E601 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -272,7 +298,7 @@
 				CD9A9A9222924B5200354989 /* LaunchScreen.storyboard in Resources */,
 				CD9A9A8F22924B5200354989 /* Assets.xcassets in Resources */,
 				CD9A9ACC22924C4C00354989 /* ListViewController.xib in Resources */,
-				CD9A9AC422924BBA00354989 /* MyScrollStoryboard.storyboard in Resources */,
+				CD9A9AC422924BBA00354989 /* MZScrollViewController.storyboard in Resources */,
 				CD9A9A8D22924B5100354989 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -293,18 +319,60 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		0C9DEB8735775B85F3CC2CA4 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-MZScrollView-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6C5CCC31F19848283CF5E601 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MZScrollView/Pods-MZScrollView-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MZScrollView/Pods-MZScrollView-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MZScrollView/Pods-MZScrollView-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		CD9A9A7E22924B5100354989 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				CD9A9A8A22924B5100354989 /* ViewController.m in Sources */,
-				CD9A9AC522924BBA00354989 /* UIScrollView+MorePan.m in Sources */,
+				CD9A9AC522924BBA00354989 /* UIScrollView+MZMorePan.m in Sources */,
 				CD9A9ACB22924C4C00354989 /* ListViewController.m in Sources */,
-				CD9A9AC722924BBA00354989 /* MyPageViewController.m in Sources */,
+				CD9A9AC722924BBA00354989 /* MZPageViewController.m in Sources */,
 				CD9A9A9522924B5200354989 /* main.m in Sources */,
 				CD9A9A8722924B5100354989 /* AppDelegate.m in Sources */,
-				CD9A9AC222924BBA00354989 /* MyScrollViewController.m in Sources */,
+				CD9A9AC222924BBA00354989 /* MZScrollViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -473,6 +541,7 @@
 		};
 		CD9A9AAF22924B5200354989 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 075D9BF1040D1647132C3426 /* Pods-MZScrollView.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -490,6 +559,7 @@
 		};
 		CD9A9AB022924B5200354989 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 36B1EA9D1572FB0A33DE90F1 /* Pods-MZScrollView.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;

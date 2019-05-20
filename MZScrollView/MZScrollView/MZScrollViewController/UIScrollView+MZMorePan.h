@@ -1,5 +1,5 @@
 //
-//  MyScrollViewController.h
+//  UIScrollView+MZMorePan.h
 //  MyScroll
 //
 //  Created by gunmm on 2019/5/19.
@@ -7,23 +7,16 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "UIScrollView+MorePan.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
+typedef UIScrollView *_Nullable(^InnerScrollViewForCurrentPage)(void);
 
-
-@interface MyScrollViewController : UIViewController
-
-@property (nonatomic, strong) UIView *headerView;
-
-
-+ (instancetype)instantiateViewController;
+@interface UIScrollView (MZMorePan)
 
 - (void)setViewControllers:(NSArray <UIViewController *> *)viewControllers scrollViewBlocks:(NSArray <InnerScrollViewForCurrentPage> *)scrollViews selectedIndex:(NSInteger)selectedIndex;
 
-
-
+- (void)setSelectedIndex:(NSInteger)selectedIndex;
 
 @end
 

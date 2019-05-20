@@ -1,19 +1,19 @@
 //
-//  UIScrollView+MorePan.m
+//  UIScrollView+MZMorePan.m
 //  MyScroll
 //
 //  Created by gunmm on 2019/5/19.
 //  Copyright © 2019 gunmm. All rights reserved.
 //
 
-#import "UIScrollView+MorePan.h"
+#import "UIScrollView+MZMorePan.h"
 #import <objc/runtime.h>
 
 
-typedef NS_ENUM(NSInteger, MoerScrollViewType) {
-    MoerScrollViewTypeDefault,
-    MoerScrollViewTypeInner,
-    MoerScrollViewTypeOutter
+typedef NS_ENUM(NSInteger, MZMoreScrollViewType) {
+    MZMoreScrollViewTypeDefault,
+    MZMoreScrollViewTypeInner,
+    MZMoreScrollViewTypeOutter
 };
 
 static const char *scrollViewTypeKey = "scrollViewType";
@@ -27,7 +27,7 @@ static const char *innerScrollViewKey = "innerScrollView";
 
 @interface UIScrollView (MyScrollViewPrivate)
 
-@property (nonatomic, assign) MoerScrollViewType scrollViewType;
+@property (nonatomic, assign) MZMoreScrollViewType scrollViewType;
 @property (nonatomic, assign) NSInteger currentIndex;
 @property (nonatomic, assign) BOOL enableScroll;
 
@@ -42,11 +42,11 @@ static const char *innerScrollViewKey = "innerScrollView";
 
 @implementation UIScrollView (MyScrollViewPrivate)
 
-- (void)setScrollViewType:(MoerScrollViewType)scrollViewType {
+- (void)setScrollViewType:(MZMoreScrollViewType)scrollViewType {
     objc_setAssociatedObject(self, scrollViewTypeKey, @(scrollViewType), OBJC_ASSOCIATION_ASSIGN);
 }
 
-- (MoerScrollViewType)scrollViewType {
+- (MZMoreScrollViewType)scrollViewType {
     return [(objc_getAssociatedObject(self, scrollViewTypeKey)) integerValue];
 }
 
@@ -59,6 +59,7 @@ static const char *innerScrollViewKey = "innerScrollView";
 }
 
 - (void)setEnableScroll:(BOOL)enableScroll {
+    self.showsVerticalScrollIndicator = enableScroll;
     objc_setAssociatedObject(self, enableScrollKey, @(enableScroll), OBJC_ASSOCIATION_ASSIGN);
 }
 
@@ -101,9 +102,6 @@ static const char *innerScrollViewKey = "innerScrollView";
 @end
 
 
-
-#pragma mark UIScrollView + MoerInnerScrollViewProxy && UITableView + MoerInnerScrollViewProxy
-
 @interface UIScrollView (SetScroll)
 
 @end
@@ -129,65 +127,70 @@ static const char *innerScrollViewKey = "innerScrollView";
     
     method_exchangeImplementations(class_getInstanceMethod(self, originalSel),
                                    class_getInstanceMethod(self, newSel));
-    
 }
 
 
 - (void)moerInnerScrollViewProxyScrollViewSetContentOffset:(CGPoint)contentOffset {
-    
     [self moerInnerScrollViewProxyScrollViewSetContentOffset:contentOffset];
-    
-
-    if (self.scrollViewType == MoerScrollViewTypeOutter) {
+    if (self.scrollViewType == MZMoreScrollViewTypeOutter) {
         if (!self.enableScroll) {
-            [self moerInnerScrollViewProxyScrollViewSetContentOffset:CGPointMake(0, 200)];
+            [self moerInnerScrollViewProxyScrollViewSetContentOffset:CGPointMake(0, (self.contentSize.height - self.bounds.size.height))];
 
         } else {
-            if (self.contentOffset.y >= 200) {
+            if (self.contentOffset.y >= (self.contentSize.height - self.bounds.size.height)) {
                 self.enableScroll = NO;
-                [self moerInnerScrollViewProxyScrollViewSetContentOffset:CGPointMake(0, 200)];
+                [self moerInnerScrollViewProxyScrollViewSetContentOffset:CGPointMake(0, (self.contentSize.height - self.bounds.size.height))];
                 self.innerScrollView.enableScroll = YES;
             }
         }
 
-    } else if (self.scrollViewType == MoerScrollViewTypeInner) {
+    } else if (self.scrollViewType == MZMoreScrollViewTypeInner) {
         if (!self.enableScroll) {
             [self moerInnerScrollViewProxyScrollViewSetContentOffset:CGPointZero];
-
         }
-
         if (self.contentOffset.y <= 0) {
             [self moerInnerScrollViewProxyScrollViewSetContentOffset:CGPointZero];
             self.outScrollView.enableScroll = YES;
             self.enableScroll = NO;
-
         }
     }
-   
 }
 
 @end
 
 
-
-@implementation UIScrollView (MorePan)
+@implementation UIScrollView (MZMorePan)
 
 - (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldRecognizeSimultaneouslyWithGestureRecognizer:(UIGestureRecognizer *)otherGestureRecognizer
 {
-    return YES;
+    if ([gestureRecognizer.view isKindOfClass:[UIScrollView class]]) {
+        UIScrollView *scrollView = (UIScrollView *)gestureRecognizer.view;
+        if (scrollView.scrollViewType != MZMoreScrollViewTypeDefault && !scrollView.enableScroll) {
+            return YES;
+        }
+    }
+    return NO;
 }
 
-- (void)setPageViewController:(UIPageViewController *)pageViewController viewControllers:(NSArray <UIViewController *> *)viewControllers scrollViewBlocks:(NSArray <InnerScrollViewForCurrentPage> *)scrollViews selectedIndex:(NSInteger)selectedIndex {
-    self.scrollViewType = MoerScrollViewTypeOutter;
-    self.enableScroll = YES;
-    self.currentIndex = selectedIndex;
+- (void)setViewControllers:(NSArray <UIViewController *> *)viewControllers scrollViewBlocks:(NSArray <InnerScrollViewForCurrentPage> *)scrollViews selectedIndex:(NSInteger)selectedIndex {
     self.viewControllers = viewControllers;
     self.scrollViewBlocks = scrollViews;
-    InnerScrollViewForCurrentPage innerScrollViewForCurrentPage = scrollViews[selectedIndex];
-    UIScrollView *currentInScrollView = innerScrollViewForCurrentPage(pageViewController, viewControllers[selectedIndex]);
-    currentInScrollView.scrollViewType = MoerScrollViewTypeInner;
+    self.scrollViewType = MZMoreScrollViewTypeOutter;
+    self.enableScroll = YES;
+    [self setSelectedIndex:selectedIndex];
+}
+
+- (void)setSelectedIndex:(NSInteger)selectedIndex {
+    self.currentIndex = selectedIndex;
+    InnerScrollViewForCurrentPage innerScrollViewForCurrentPage = self.scrollViewBlocks[selectedIndex];
+    UIScrollView *currentInScrollView = innerScrollViewForCurrentPage();
+    currentInScrollView.scrollViewType = MZMoreScrollViewTypeInner;
     currentInScrollView.outScrollView = self;
     self.innerScrollView = currentInScrollView;
+    
+    if (self.contentOffset.y < (self.contentSize.height - self.bounds.size.height)) {
+        [self.innerScrollView setContentOffset:CGPointZero];
+    }
 }
 
 @end
